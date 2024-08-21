@@ -1,2 +1,26 @@
-### TEST
-GET http://localhost:8001/
+### GET ALL THREADS
+GET http://localhost:8001/forumapp/api/v1/threads
+
+### GET THREAD By:id
+GET http://localhost:8001/forumapp/api/v1/threads/66c6511d560b5696f9c417c6
+
+### CREATE THREADS
+POST http://localhost:8001/forumapp/api/v1/threads
+Content-Type: application/json
+
+{
+  "title": "Threads Pertama",
+  "body": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+}
+
+### UPDATE THREAD
+PATCH http://localhost:8001/forumapp/api/v1/threads/66c6511d560b5696f9c417c6
+Content-Type: application/json
+
+{
+  "title": "Thread Update",
+  "body": "Lorem ipsum dolor sit amet."
+}
+
+### DELETE THREAD
+DELETE http://localhost:8001/forumapp/api/v1/threads/66c6511d560b5696f9c417c6
