@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  threads:
+    build: .
+    ports:
+      - 8001:8001
+    depends_on:
+      - mongo
+    env_file:
+      - .env
+  
+  mongo:
+    image: mongo
+    ports:
+      - 27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=myuser
+      - MONGO_INITDB_ROOT_PASSWORD=mypassword
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:

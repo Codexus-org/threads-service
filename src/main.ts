@@ -2,6 +2,7 @@ import express from "express"
 import mongoose from "mongoose"
 import dotenv from "dotenv"
 import threadRoutes from "./routes/thread.routes"
+import { middlewareCheckOrigin } from "./middleware/middleware.check-origin"
 
 dotenv.config()
 
@@ -12,10 +13,8 @@ mongoose.connect(process.env.MONGO_URI as string)
 const app = express()
 app.use(express.json())
 
-app.get("/", (req, res) => {
-  res.send("Test Service Threads")
-})
+app.use(middlewareCheckOrigin)
 
-app.use("/forumapp/api/v1/threads", threadRoutes)
+app.use("/forumapp/api/v1/threads-services", threadRoutes)
 
 app.listen(process.env.PORT, () => {console.log(`Server running on port ${process.env.PORT}`)})
