@@ -9,8 +9,12 @@ POST http://localhost:8001/forumapp/api/v1/threads-services
 Content-Type: application/json
 
 {
-  "title": "Threads Docker",
-  "body": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+  "title": "Threads dua",
+  "body": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+  "tokens": {
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZDgwODNjMjgxZWNlMzcxNDcyNjU3MCIsIm5hbWUiOiJhbmRpIiwiZW1haWwiOiJhbmRpQGdtYWlsLmNvbSIsImlhdCI6MTcyNTUxMTg2OSwiZXhwIjoxNzI1NTEyMTY5fQ.o59H5pTrykimSbAbBkCKP4-wLYz7BY8McqGLxIlhypc",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZDgwODNjMjgxZWNlMzcxNDcyNjU3MCIsIm5hbWUiOiJhbmRpIiwiZW1haWwiOiJhbmRpQGdtYWlsLmNvbSIsImlhdCI6MTcyNTUxMTg2OSwiZXhwIjoxNzI2MTE2NjY5fQ.lxiym89fWME85PESorbvCU6LImr8D4wJ5nWfzGPOD6A"
+  }
 }
 
 ### UPDATE THREAD
@@ -24,3 +28,6 @@ Content-Type: application/json
 
 ### DELETE THREAD
 DELETE http://localhost:8001/forumapp/api/v1/threads-services/66d74b86189e432b4f4fd55c
+
+### logout
+POST http://localhost:8001/logout

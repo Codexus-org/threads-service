@@ -5,7 +5,7 @@ const ThreadRepositories = {
 
   getAllThreads: async () => {
     try {
-      const threads = await Thread.find();
+      const threads = await Thread.find().populate("authorId");
       return threads;
     } catch (error) {
       throw error;
