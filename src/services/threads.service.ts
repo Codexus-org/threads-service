@@ -1,5 +1,6 @@
 import { IThread, IUpdateThread } from "../interfaces/threads.interface";
 import ThreadRepositories from "../repositories/threads.repositories";
+import jwt from "jsonwebtoken";
 
 const ThreadServices = {
 
@@ -31,15 +32,17 @@ const ThreadServices = {
     }
   },
 
-  createThread: async (threadData: IThread) => {
+  createThread: async (title: string, body: string, userId: string, accessToken: string) => {
     try {
-      const { title, body } = threadData;
+      const payload = jwt.decode(accessToken) as { id: string, name: string, email: string };
+      // console.log(payload.name)
+      const userName = payload.name
 
       if (!title || !body) {
         throw new Error("title and body are required");
       }
 
-      const newThread = await ThreadRepositories.createThread(threadData);
+      const newThread = await ThreadRepositories.createThread({ title, body, userId, userName});
 
       return newThread;
     } catch (error: any) {

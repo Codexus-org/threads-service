@@ -28,8 +28,9 @@ const ThreadControllers = {
   handleCreateThread: async (req: any, res: any) => {
     try {
       const { title, body } = req.body;
-      const { id } = req.body.authUser;
-      const newThread = await ThreadServices.createThread({ title, body, authorId: id });
+      const { userId, refreshToken, accessToken } = req.body.user;
+      console.log({ userId, refreshToken, accessToken })
+      const newThread = await ThreadServices.createThread(title, body, userId, accessToken);
       res.status(201).json({ message: "Success create new thread", data: newThread });
     } catch (error: any) {
       if (error.message === "title and body are required") {

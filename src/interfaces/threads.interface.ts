@@ -1,9 +1,8 @@
-import { Types } from "mongoose";
-
 export interface IThread {
   title: string;
   body: string;
-  authorId: Types.ObjectId;
+  userId: string;
+  userName: string;
 }
 
 export interface IUpdateThread {
