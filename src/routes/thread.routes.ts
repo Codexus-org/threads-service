@@ -7,7 +7,7 @@ const threadRoutes = express.Router();
 threadRoutes.get("/", ThreadControllers.handleGetAllThreads);
 threadRoutes.post("/", verifyAccessToken, ThreadControllers.handleCreateThread);
 threadRoutes.get("/:threadId", ThreadControllers.handleGetThreadById);
-threadRoutes.patch("/:threadId", ThreadControllers.handleUpdateThread);
-threadRoutes.delete("/:threadId", ThreadControllers.handleDeleteThread);
+threadRoutes.patch("/:threadId", verifyAccessToken, ThreadControllers.handleUpdateThread);
+threadRoutes.delete("/:threadId", verifyAccessToken, ThreadControllers.handleDeleteThread);
 
 export default threadRoutes;

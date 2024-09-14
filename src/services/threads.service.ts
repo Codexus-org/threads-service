@@ -32,8 +32,9 @@ const ThreadServices = {
     }
   },
 
-  createThread: async (title: string, body: string, userId: string, accessToken: string) => {
+  createThread: async (threadData : IThread, accessToken: string) => {
     try {
+      const { title, body, userId } = threadData;
       const payload = jwt.decode(accessToken) as { id: string, name: string, email: string };
       // console.log(payload.name)
       const userName = payload.name

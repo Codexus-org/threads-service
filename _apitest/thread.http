@@ -7,9 +7,10 @@ GET http://localhost:3001/threads-services/66d74b86189e432b4f4fd55c
 ### CREATE THREADS
 POST http://localhost:3001/threads-services
 Content-Type: application/json
+Cookie: accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZTA3NmJhNjRlNzZjNjQ2N2JmZjFjZCIsIm5hbWUiOiJBc2VwIiwiZW1haWwiOiJhc2VwamF5YUBnbWFpbC5jb20iLCJpYXQiOjE3MjYxMTc1MTMsImV4cCI6MTcyNjExNzgxM30.9nyowbSBZ8yFP1phQAKPiGTg90uCLbRLpIHfBYCo8is;refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZTA3NmJhNjRlNzZjNjQ2N2JmZjFjZCIsIm5hbWUiOiJBc2VwIiwiZW1haWwiOiJhc2VwamF5YUBnbWFpbC5jb20iLCJpYXQiOjE3MjYxMTc1MTMsImV4cCI6MTcyNjcyMjMxM30.pQjOjxIpMXwuCQNoRCClPdATpo1VeDHkXbDNp54PsOc
 
 {
-  "title": "Threads dua",
+  "title": "Threads Asep",
   "body": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
 }
 
@@ -26,4 +27,4 @@ Content-Type: application/json
 DELETE http://localhost:3001/threads-services/66da1c270c05237913ab093e
 
 ### logout
-POST http://localhost:3001/logout
+POST http://localhost:3001/auth/logout
