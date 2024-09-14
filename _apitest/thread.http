@@ -28,3 +28,6 @@ DELETE http://localhost:3001/threads-services/66da1c270c05237913ab093e
 
 ### logout
 POST http://localhost:3001/auth/logout
+
+### GET THREADS BY userId
+GET http://localhost:3001/threads-services/user/66c2ce70e25fa601100f54ef

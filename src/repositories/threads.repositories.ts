@@ -52,6 +52,15 @@ const ThreadRepositories = {
     } catch (error) {
       throw error;
     }
+  },
+
+  getUserThreads: async (userId: string) => {
+    try {
+      const threads = await Thread.find({ userId });
+      return threads;
+    } catch (error) {
+      throw error;
+    }
   }
 }
 

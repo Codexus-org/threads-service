@@ -66,6 +66,17 @@ const ThreadControllers = {
         res.status(404).json({ message: error.message });
       }
     }
+  },
+
+  handleGetUserThreads: async (req: any, res: any) => {
+    try {
+      const threads = await ThreadServices.getUserThreads(req.params.userId);
+      res.status(200).json({ message: "Success get user threads", data: threads });
+    } catch (error: any) {
+      if (error.message === "Thread not found") {
+        res.status(404).json({ message: error.message });
+      }
+    }
   }
 }
 

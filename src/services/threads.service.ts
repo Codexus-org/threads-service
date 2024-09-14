@@ -81,6 +81,20 @@ const ThreadServices = {
     } catch (error: any) {
       throw new Error(error.message);
     }
+  },
+
+  getUserThreads: async (userId: string) => {
+    try {
+      const threads = await ThreadRepositories.getUserThreads(userId);
+
+      if(threads.length === 0) {
+        throw new Error("Thread not found");
+      }
+
+      return threads;
+    } catch (error: any) {
+      throw new Error(error.message);
+    }
   }
 }
 

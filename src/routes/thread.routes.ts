@@ -9,5 +9,6 @@ threadRoutes.post("/", verifyAccessToken, ThreadControllers.handleCreateThread);
 threadRoutes.get("/:threadId", ThreadControllers.handleGetThreadById);
 threadRoutes.patch("/:threadId", verifyAccessToken, ThreadControllers.handleUpdateThread);
 threadRoutes.delete("/:threadId", verifyAccessToken, ThreadControllers.handleDeleteThread);
+threadRoutes.get("/user/:userId", ThreadControllers.handleGetUserThreads);
 
 export default threadRoutes;
